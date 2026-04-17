@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.11" version="0.11">
+  <Inventory>
+    <sensor publicID="STMKG/SKRIPSI/EG4.5II" name="SKRIPSI/EG4.5II" response="STMKG/SKRIPSI/EG4.5II/1">
+      <model>EG4.5II</model>
+      <manufacturer>EGL-GEO</manufacturer>
+      <unit>V/m/s</unit>
+    </sensor>
+    <datalogger publicID="STMKG/SKRIPSI/ADS1256" name="SKRIPSI/ADS1256">
+      <digitizerModel>ADS1256</digitizerModel>
+      <digitizerManufacturer>Waveshare</digitizerManufacturer>
+      <recorderModel>Raspberry Pi 3 Model B+</recorderModel>
+      <recorderManufacturer>Raspberry Pi Foundation</recorderManufacturer>
+      <gain>3355443</gain>
+      <decimation sampleRateNumerator="50" sampleRateDenominator="1">
+        <digitalFilterChain>STMKG/SKRIPSI/ADS1256/1</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <responsePAZ publicID="STMKG/SKRIPSI/EG4.5II/1" name="STMKG/SKRIPSI/EG4.5II/1">
+      <type>A</type>
+      <gain>28.8</gain>
+      <gainFrequency>4.5</gainFrequency>
+      <normalizationFactor>1586</normalizationFactor>
+      <normalizationFrequency>4.5</normalizationFrequency>
+      <numberOfZeros>1</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0)</zeros>
+      <poles>(-16.964,22.619) (-16.964,-22.619)</poles>
+    </responsePAZ>
+    <responseFIR publicID="STMKG/SKRIPSI/ADS1256/1" name="STMKG/SKRIPSI/ADS1256/1">
+      <gain>1</gain>
+      <gainFrequency>1</gainFrequency>
+      <decimationFactor>1</decimationFactor>
+      <delay>15</delay>
+      <correction>15</correction>
+      <numberOfCoefficients>13</numberOfCoefficients>
+      <symmetry>C</symmetry>
+      <coefficients>0.0001 0.0005 0.0012 0.0023 0.0034 0.0043 0.005 0.0043 0.0034 0.0023 0.0012 0.0005 0.0001</coefficients>
+    </responseFIR>
+    <network publicID="Network#20250417064057.184116.17906" code="IA">
+      <start>2025-04-01T00:00:00.0000Z</start>
+      <description>Metadata Custom for Testing Sensors</description>
+      <institutions>STMKG</institutions>
+      <region>Indonesia</region>
+      <restricted>true</restricted>
+      <shared>true</shared>
+      <station publicID="Station#20250417064300.823805.11002" code="STMKG">
+        <start>2025-04-01T06:41:06.0000Z</start>
+        <description>Tanah Tinggi</description>
+        <latitude>-6.171239</latitude>
+        <longitude>106.645735</longitude>
+        <elevation>8</elevation>
+        <place>Tanah Tinggi</place>
+        <country>Indonesia</country>
+        <affiliation>STMKG</affiliation>
+        <type>SP</type>
+        <restricted>true</restricted>
+        <shared>true</shared>
+        <sensorLocation publicID="SensorLocation#20250417064539.408499.64315" code="00">
+          <start>2025-04-01T06:41:06.0000Z</start>
+          <latitude>-6.171239</latitude>
+          <longitude>106.645735</longitude>
+          <elevation>8</elevation>
+          <stream publicID="Stream#20250417064614.307894.41377" code="SHZ" datalogger="STMKG/SKRIPSI/ADS1256" sensor="STMKG/SKRIPSI/EG4.5II">
+            <start>2025-04-01T06:41:06.0000Z</start>
+            <dataloggerSerialNumber>1234</dataloggerSerialNumber>
+            <sensorSerialNumber>1234</sensorSerialNumber>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>96636758.4</gain>
+            <gainFrequency>4.5</gainFrequency>
+            <gainUnit>V/m/s</gainUnit>
+            <format>Steim2</format>
+            <flags>GC</flags>
+            <restricted>true</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+      </station>
+    </network>
+  </Inventory>
+</seiscomp>

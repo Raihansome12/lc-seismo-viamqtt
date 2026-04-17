@@ -1,0 +1,39 @@
+[Unit]
+Description=Sensor Monitor Service (GPS and Geophone)
+After=network-online.target
+Wants=network-online.target
+StartLimitBurst=5
+StartLimitIntervalSec=60
+
+[Service]
+Type=simple
+User=skripsi
+Group=skripsi
+WorkingDirectory=/opt/seismic-service
+ExecStart=/usr/bin/python3 /opt/seismic-service/sensor-monitoring.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment=PYTHONPATH=/opt/seismic-service
+Environment=PYTHONUNBUFFERED=1
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/seismic-service /var/log
+
+# Resource limits
+LimitNOFILE=65536
+MemoryMax=512M
+CPUQuota=80%
+
+# GPIO and Serial access
+SupplementaryGroups=gpio spi i2c dialout
+
+[Install]
+WantedBy=multi-user.target
