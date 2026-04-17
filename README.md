@@ -79,12 +79,6 @@ The system integrates **hardware (sensor + electronics)** and **software (data p
 
 ---
 
-## 📎 Author
-
-**Raihan Ahmad**
-
----
-
 ## 🔗 Repository Link
 
 https://github.com/Raihansome12/seismic-monitoring
